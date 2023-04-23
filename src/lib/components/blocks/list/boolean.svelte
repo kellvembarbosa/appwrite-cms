@@ -13,6 +13,7 @@
 
 	// Prevents compilation errors
 	config; document; value; panel; group; block; ready;
+	
 </script>
 
 <p>{value === true ? 'Yes' : value === false ? 'No' : 'None'}</p>

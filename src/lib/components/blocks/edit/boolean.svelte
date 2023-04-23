@@ -15,6 +15,10 @@
 	config; document; value; panel; group; block; ready;
 
 	$: formValue = value === true ? 'xtrue' : value === false ? 'xfalse' : 'xempty';
+
+	if (document === null && config.defaultChecked != null) {
+		value = config.defaultChecked;
+	}
 </script>
 
 <div class="flex flex-col space-y-1">

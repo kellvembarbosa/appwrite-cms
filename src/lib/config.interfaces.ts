@@ -6,6 +6,7 @@ import ViewFileEl from '$lib/components/blocks/view/file.svelte';
 import EditPlaintextEl from '$lib/components/blocks/edit/plaintext.svelte';
 import EditBooleanEl from '$lib/components/blocks/edit/boolean.svelte';
 import EditFileEl from '$lib/components/blocks/edit/file.svelte';
+import EditSelectEl from '$lib/components/blocks/edit/select.svelte';
 
 export abstract class ListInterface {
 	name = 'Unknown';
@@ -115,6 +116,13 @@ export class EditBoolean extends EditInterface {
 		super();
 		this.element = EditBooleanEl;
 	}
+
+	defaultChecked: boolean | null = null;
+
+	setDefaultChecked(checked: boolean) {
+	  this.defaultChecked = checked;
+	  return this;
+	}
 }
 
 export class EditFile extends EditInterface {
@@ -123,3 +131,23 @@ export class EditFile extends EditInterface {
 		this.element = EditFileEl;
 	}
 }
+
+export class EditSelect extends EditInterface {
+	constructor() {
+	  super();
+	  this.element = EditSelectEl;
+	}
+  
+	options: Array<{ value: string; label: string }> = [];
+	defaultOption: string | null = null;
+  
+	setOptions(options: Array<{ value: string; label: string }>) {
+	  this.options = options;
+	  return this;
+	}
+  
+	setDefaultOption(value: string) {
+	  this.defaultOption = value;
+	  return this;
+	}
+  }

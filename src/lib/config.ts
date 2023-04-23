@@ -1,18 +1,21 @@
 import { createBlock, createConfig, createGroup, createPanel } from './config.builder';
-import { EditBoolean, EditFile, EditInterface, EditPlaintext, ListPlaintext, ViewFile } from './config.interfaces';
+import { EditBoolean, EditFile, EditInterface, EditPlaintext, EditSelect, ListPlaintext, ViewFile } from './config.interfaces';
 
-export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c583dd5').addGroup(
-	createGroup().addPanel(
+export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c583dd5')
+
+	.addGroup(
+	createGroup()
+		.addPanel(
 		createPanel('6442cfe96229be0ea6ba', 'watchfaces')
-			.addIdBlock()
+			//.addIdBlock()
 			.addBlock(createBlock('name'))
 			.addBlock(
 				createBlock('isPremium')
-				.setEditInterface(new EditBoolean())
+				.setEditInterface(new EditBoolean().setDefaultChecked(true))
 			)
 			.addBlock(
 				createBlock('showClock')
-				.setEditInterface(new EditBoolean())
+				.setEditInterface(new EditBoolean().setDefaultChecked(false))
 			)
 			.addBlock(
 				createBlock('watchMedia')
@@ -30,11 +33,27 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 			)
 			.addBlock(
 				createBlock('faceType')
-				.setEditInterface(new EditPlaintext().setCreateValue("file"))
-			) 
+				.setEditInterface(
+					new EditSelect()
+						.setOptions([
+							{ value: 'file', label: 'File' },
+							{ value: 'builder', label: 'Builder' }
+						])
+						.setDefaultOption('file')
+				)
+			)
 			.addBlock(
 				createBlock('faceModel')
-				.setEditInterface(new EditPlaintext().setCreateValue("portrait"))
+				.setEditInterface(
+					new EditSelect()
+						.setOptions([
+							{ value: 'photo', label: 'Photo Basic' },
+							{ value: 'live', label: 'Live Basic' },
+							{ value: 'portrait', label: 'Portrait' },
+							{ value: 'meridian', label: 'Meridian' }
+						])
+						.setDefaultOption('portrait')
+				)
 			)
 	)
 );

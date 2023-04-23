@@ -31,7 +31,7 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 			.addBlock(
 				createBlock('faceType')
 				.setEditInterface(new EditPlaintext().setCreateValue("file"))
-			)
+			) 
 			.addBlock(
 				createBlock('faceModel')
 				.setEditInterface(new EditPlaintext().setCreateValue("portrait"))

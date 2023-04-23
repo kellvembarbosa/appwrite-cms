@@ -84,8 +84,8 @@ export class Panel {
 	subtitle = '';
 	labels: Label[] = [];
 	blocks: Block[] = [];
-	singletonId: string = '';
-	idAttribute: string = '$id';
+	singletonId = '';
+	idAttribute = '$id';
 	deleteEnabled = true;
 	createEnabled = true;
 	editEnabled = true;

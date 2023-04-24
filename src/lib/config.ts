@@ -28,27 +28,39 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 					)
 					.setName('Watchfaces')
 					.setIcon('⌚️')
-					.addBlock(createBlock('name'))
+					.addBlock(
+						createBlock('name')
+							// .setAttribute("Nome da Watch Face - (Vai no title do Site)")
+					)
 					.addBlock(
 						createBlock('isPremium')
+							// .setAttribute("Watchface é premium?")
 							.setEditInterface(new EditBoolean().setDefaultChecked(true))
 					)
 					.addBlock(
 						createBlock('showClock')
+							// .setAttribute("Relogio por cima do PRINT?")
 							.setEditInterface(new EditBoolean().setDefaultChecked(false))
 					)
 					.addBlock(
 						createBlock('watchMedia')
+							// .setAttribute("Watch Face Print")
 							.setEditInterface(new EditFile("app"))
 							.setViewInterface(new ViewFile("app"))
 					)
 					.addBlock(
 						createBlock('watchFile')
+							// .setAttribute("Arquivo da Watch Face")
 							.setEditInterface(new EditFile("app"))
 							.setViewInterface(new ViewFile("app"))
 					)
 					.addBlock(
+						createBlock('tagId')
+							// .setAttribute("Tag ID")
+					)
+					.addBlock(
 						createBlock('fileType')
+							// .setAttribute("Watch Media é imagem, mp4 ou gif?")
 							.setEditInterface(
 								new EditSelect()
 									.setOptions([
@@ -61,6 +73,7 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 					)
 					.addBlock(
 						createBlock('faceType')
+							// .setAttribute("Watch Face é arquivo ou builder(Construida no APP)?")
 							.setEditInterface(
 								new EditSelect()
 									.setOptions([
@@ -72,6 +85,7 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 					)
 					.addBlock(
 						createBlock('faceModel')
+							// .setAttribute("Modelo da Watch Face")
 							.setEditInterface(
 								new EditSelect()
 									.setOptions([
@@ -83,5 +97,17 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 									.setDefaultOption('portrait')
 							)
 					)
+					
 			)
+			.addPanel(
+				createPanel('6442cfe96229be0ea6ba', 'tags')
+					.addIdBlock()
+					.setName('Tags')
+					.setIcon('🏷️')
+					.addBlock(
+						createBlock('name')
+							//.setAttribute("Nome da Tag")
+					)
+			)
+			
 	);

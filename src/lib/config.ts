@@ -115,6 +115,13 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 						createBlock('name')
 							//.setAttribute("Nome da Tag")
 					)
+					.addBlock(
+						createBlock('sort')
+						.setEditInterface(
+							new EditPlaintext()
+								.setCreateValue("1")
+						)
+					)
 			)
 			
 	);

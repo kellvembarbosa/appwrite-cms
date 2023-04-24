@@ -77,6 +77,6 @@ export const AppwriteService = {
 		return await storage.createFile(bucketId, ID.unique(), file, [Permission.read(Role.any())]);
 	},
 	getFilePreview: async (bucketId: string, fileId: string) => {
-		return await storage.getFilePreview(bucketId, fileId, 500);
+		return storage.getFilePreview(bucketId, fileId, 500);
 	}
 };

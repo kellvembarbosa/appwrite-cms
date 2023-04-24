@@ -16,7 +16,16 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 				createPanel('6442cfe96229be0ea6ba', 'watchfaces')
 					//.addIdBlock()
 					.addDefaultLabel()
-					.addLabel(createLabel("Premium").setIcon('🔒').setQueries(["isPremium"]))
+					.addLabel(
+						createLabel("Premium")
+						.setIcon('🔒')
+						.setQueries(["equal(\"isPremium\", true)"])
+					)
+					.addLabel(
+						createLabel("Free")
+						.setIcon('🔓')
+						.setQueries(["equal(\"isPremium\", false)"])
+					)
 					.setName('Watchfaces')
 					.setIcon('⌚️')
 					.addBlock(createBlock('name'))

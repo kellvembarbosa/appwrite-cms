@@ -325,7 +325,7 @@
 			<p class="text-sm text-slate-500">Results per page:</p>
 
 			<div class="flex space-x-1">
-				{#each [1, 10, 25, 50, 100] as limit}
+				{#each [1, 10, 25, 50, 100, 200, 1000] as limit}
 					<a
 						href={getSearch(search, 'limit', limit.toString())}
 						class={`p-1 px-3 rounded-md ${

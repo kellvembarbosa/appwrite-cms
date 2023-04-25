@@ -30,6 +30,10 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 					.setIcon('⌚️')
 					.addBlock(
 						createBlock('name')
+						.setListInterface(
+							new ListPlaintext()
+							.setWidth('250px')
+						)
 							// .setAttribute("Nome da Watch Face - (Vai no title do Site)")
 					)
 					.addBlock(
@@ -47,6 +51,7 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 							// .setAttribute("Watch Face Print")
 							.setEditInterface(new EditFile("app"))
 							.setViewInterface(new ViewFile("app"))
+							.setListInterface(new ListPlaintext())
 					)
 					.addBlock(
 						createBlock('watchFile')

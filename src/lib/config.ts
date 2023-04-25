@@ -89,8 +89,7 @@ export default createConfig('https://cloud.knksolutions.pt/v1', '63f246ea28374c5
 							.setEditInterface(
 								new EditSelect()
 									.setOptions([
-										{ value: 'photo', label: 'Photo Basic' },
-										{ value: 'live', label: 'Live Basic' },
+										{ value: 'photo', label: 'Photo/Live Basic' },
 										{ value: 'portrait', label: 'Portrait' },
 										{ value: 'meridian', label: 'Meridian' }
 									])

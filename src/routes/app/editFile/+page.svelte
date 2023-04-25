@@ -41,7 +41,7 @@
 	<JSONEditor bind:content />
 
 	<!-- <textarea class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md" rows="10" bind:value={fileTextArea}></textarea>
-     -->
+     --> 
 	<div class="mt-1">
 		<div class="mt-1">
 			<label for={bucketID} class="block text-sm font-medium text-gray-700 pb-1"> Bucket ID </label>

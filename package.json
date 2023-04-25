@@ -35,6 +35,7 @@
 	"dependencies": {
 		"@tailwindcss/typography": "^0.5.8",
 		"appwrite": "^11.0.0",
+		"svelte-jsoneditor": "^0.17.1",
 		"svelte-kit-cookie-session": "^3.2.2"
 	}
 }

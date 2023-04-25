@@ -27,7 +27,7 @@
 
 			var urlCreator = window.URL || window.webkitURL;
 			var imageUrl = urlCreator.createObjectURL(blob);
-			src = imageUrl;
+			src = file.toString();
 		}
 	});
 </script>

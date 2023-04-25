@@ -73,10 +73,25 @@ export const AppwriteService = {
 	) => {
 		return await databases.updateDocument<T>(databaseId, collectionId, documentId, document);
 	},
-	createFile: async (bucketId: string, file: File) => {
-		return await storage.createFile(bucketId, ID.unique(), file, [Permission.read(Role.any())]);
+	createFile: async (bucketId: string, file: File, fileID : string | null) => {
+		return await storage.createFile(bucketId, fileID == null ? ID.unique() : fileID, file, [Permission.read(Role.any())]);
 	},
 	getFilePreview: async (bucketId: string, fileId: string) => {
-		return storage.getFilePreview(bucketId, fileId, 500);
+		return await storage.getFilePreview(bucketId, fileId, 500);
+	},
+	getFileDownload: async (bucketId: string, fileId: string) => {
+		return await storage.getFileDownload(bucketId, fileId);
+	},
+	getFileView: async (bucketId: string, fileId: string) => {
+		return await storage.getFileView(bucketId, fileId);
+	},
+	getFile: async (bucketId: string, fileId: string) => {
+		return await storage.getFile(bucketId, fileId);
+	},
+	updateFile: async (bucketId: string, fileId: string) => {
+		return await storage.updateFile(bucketId, fileId);
+	},
+	deleteFile: async (bucketId: string, fileId: string) => {
+		return await storage.deleteFile(bucketId, fileId);
 	}
 };
